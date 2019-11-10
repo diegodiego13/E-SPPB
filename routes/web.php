@@ -30,11 +30,11 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('logout1', 'Auth\LoginController@logout')->name('logout1');
 
-// Route::post('register', 'RegistroController@index');
-// Route::get('register', 'RegistroController@index')->name('register');
+Route::post('register', 'RegistroController@store');
+Route::get('register', 'RegistroController@store')->name('register');
 
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Auth\RegisterController@register');
+// Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+// Route::post('register', 'Auth\RegisterController@register');
 
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
