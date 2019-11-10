@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace E_SPPB\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\User;
+use E_SPPB\Http\Controllers\Controller;
+use E_SPPB\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -59,7 +59,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \E_SPPB\User
      */
     protected function create(array $data)
     {
