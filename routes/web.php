@@ -18,7 +18,8 @@
 
 
 Route::get('/','MainDash@initial');
-Route::get('main','MainDash@initial');
+Route::get('main','MainDash@initial')->name('main');
+// Route::post('main','MainDash@initial');
 // Route::get('medical','MainDash@initial');
 // Route::resource('try','TryControl');
 // Auth::routes();

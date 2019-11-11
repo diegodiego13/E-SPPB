@@ -52,7 +52,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('main') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -499,7 +499,7 @@
                 </div>
                 <div class="modal-body">Su solicitud de registro se ha enviado correctamente, pronto se le enviara una respuesta a su correo.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-success" type="button" data-dismiss="modal">Aceptar</button>
+                    <button class="btn btn-success" type="button" data-dismiss="modal" >Aceptar</button>
                     
                 </div>
             </div>

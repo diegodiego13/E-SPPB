@@ -35,6 +35,18 @@ class RegistroController extends Controller
     public function store(Request $request)
     {
        
+        $this->validate($request,
+            [
+                'name'=> 'required',
+                'apellido'=> 'required',
+                'email2'=> 'required',
+                'date'=> 'required',
+                'profesion'=> 'required',
+                'institucion'=> 'required',
+                'motivo'=> 'required'
+            ]
+        );
+
         \DB::table('solicitud')->insert(
             [
                 'nombre' => $request->input('name'),
