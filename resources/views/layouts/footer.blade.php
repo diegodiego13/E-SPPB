@@ -49,3 +49,10 @@
 <script src="/js/graphics/rows.js"></script>
 <script src="/js/graphics/dispersion.js"></script>
 
+  <!-- Page level plugins -->
+  <script src="/js/jquery.dataTables.min.js"></script>
+  <script src="/js/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/datatables-demo.js"></script>
+

@@ -207,7 +207,7 @@
     </li>
 
 
-<hr class="sidebar-divider">
+    <hr class="sidebar-divider">
     {{-- <div class="mb-4" style="border-radius: 10px 10px; padding: 10px; background-color:royalblue; color: white;">
         <h2 class="h4 mb-2" style="font-weight: bold">Aspectos sociodemográficos</h2>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam praesentium, cum et labore provident possimus eligendi ex voluptatibus voluptate, error odit doloremque veritatis asperiores fuga repudiandae repellendus unde maxime fugit.

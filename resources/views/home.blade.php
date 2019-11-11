@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('perfilUser')
 <div class="container">
 
@@ -60,3 +61,13 @@
         </div>
     </div>
 @endsection
+
+
+
+@if (Auth::user()->rol === 'Administrador')
+    @include('layouts.administrador')
+@elseif(Auth::user()->rol === 'Especialista')
+    @include('layouts.especialista')
+@elseif(Auth::user()->rol === 'Investigador')
+    @include('layouts.investigador')
+@endif

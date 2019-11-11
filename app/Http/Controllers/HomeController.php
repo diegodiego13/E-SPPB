@@ -23,6 +23,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        
+        if(\Auth::user()->rol === 'Investigador'){
+            $users= \DB::table('solicitud')->select(
+                'nombre', 
+                'apellidos',
+                'email',
+                'fecha',
+                'profesion',
+                'institucion',
+                'motivo'
+                )->get();
+            return view('home', compact('users'));
+        }else{
+            return view('home');
+        }
+        
+        
     }
 }
