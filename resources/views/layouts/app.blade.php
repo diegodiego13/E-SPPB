@@ -25,9 +25,60 @@
         <script src="/highcharts/data.js"></script>
         <script src="/highcharts/drilldown.js"></script>
 
+        {{-- INICIO mapa --}}
+
+            <link rel="stylesheet" href="libs/leaflet.css" />
+    <link rel="stylesheet" href="src/leaflet.draw.css" />
+
+    <script src="libs/leaflet-src.js"></script>
+
+    <script src="src/Leaflet.draw.js"></script>
+    <script src="src/Leaflet.Draw.Event.js"></script>
+
+    <script src="src/edit/handler/Edit.Poly.js"></script>
+    <script src="src/edit/handler/Edit.SimpleShape.js"></script>
+    <script src="src/edit/handler/Edit.Rectangle.js"></script>
+    <script src="src/edit/handler/Edit.Marker.js"></script>
+    <script src="src/edit/handler/Edit.CircleMarker.js"></script>
+    <script src="src/edit/handler/Edit.Circle.js"></script>
+
+
+    <script src="src/draw/handler/Draw.Feature.js"></script>
+    <script src="src/draw/handler/Draw.Polyline.js"></script>
+    <script src="src/draw/handler/Draw.Polygon.js"></script>
+    <script src="src/draw/handler/Draw.SimpleShape.js"></script>
+    <script src="src/draw/handler/Draw.Rectangle.js"></script>
+    <script src="src/draw/handler/Draw.Marker.js"></script>
+    <script src="src/draw/handler/Draw.CircleMarker.js"></script>
+    <script src="src/draw/handler/Draw.Circle.js"></script>
+
+
+    <script src="src/ext/TouchEvents.js"></script>
+    <script src="src/ext/LatLngUtil.js"></script>
+    <script src="src/ext/GeometryUtil.js"></script>
+    <script src="src/ext/LineUtil.Intersect.js"></script>
+    <script src="src/ext/Polyline.Intersect.js"></script>
+    <script src="src/ext/Polygon.Intersect.js"></script>
+
+    <script src="src/Control.Draw.js"></script>
+    <script src="src/Tooltip.js"></script>
+    <script src="src/Toolbar.js"></script>
+
+    <script src="src/draw/DrawToolbar.js"></script>
+    <script src="src/edit/EditToolbar.js"></script>
+    <script src="src/edit/handler/EditToolbar.Edit.js"></script>
+    <script src="src/edit/handler/EditToolbar.Delete.js"></script>
+
+    <script src="libs/leaflet.snap.js"></script>
+    <script src="libs/leaflet.geometryutil.js"></script>
+
+
+
+        {{-- FIN mapa --}}
+
     
         {{-- <title style="display: block">Recoleccion de datos</title> --}}
-        <title >{{ config('app.name') }} @yield('title')</title>
+        <title >E-SSPB+ @yield('title')</title>
     </head>
 
 <body id="page-top">
@@ -43,7 +94,7 @@
             <a class="sidebar-brand d-flex align-items-center" style="justify-content: flex-end;" href="#">
                     {{-- justify-content-center --}}
                 <div class="sidebar-brand-icon rotate-n-15" >
-                    <i style="font-size: 15px;">{{ config('app.name') }}</i>
+                    <i style="font-size: 15px;">E-SSPB+</i>
                     {{-- class="fas fa-laugh-wink" --}}
                 </div   >
                 
@@ -223,21 +274,12 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    {{-- <div class="d-sm-flex align-items-center justify-content-between mb-4"> --}}
-                        {{-- <h1 class="h3 mb-0 text-gray-800">Dashboard</h1> --}}
-                        {{-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
-                    </div>
-
                     <!-- all code here -->
-            
-                    {{-- --------------------------------------------------------}}
-                    @section('content')
-                    @endsection
-
+        
+                    {{-- @include('index') --}}
+                    
                     @yield('content')
-
+                    
                 </div>
                 <!-- /.container-fluid -->
 
@@ -253,7 +295,7 @@
     <!-- _________________________________________________________________________________________________________ -->
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up" aria-labelledby="descriptionClose"></i>
+        <i class="fas fa-angle-up" style=" line-height: 40px;" aria-labelledby="descriptionClose"></i>
         <div id="descriptionClose" style="display: none;">Este icono permite ir al encabezado del sitio web</div>
     </a>
 

@@ -23,9 +23,28 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        $aspD= \DB::table('demographic_aspects')->select('age', 'gender')->get();
+
+        $g2= \DB::table('minimental_test')
+        ->join('demographic_aspects', 'minimental_test.form_id', '=', 'demographic_aspects.form_id')
+        ->select('minimental_test.final_score','demographic_aspects.gender')
+        ->get();
+
+        $alF= \DB::table('functional_scope_e_sppb')->select('mayor_distance')->get();
+
+        $buE= \DB::table('built_environment')
+        ->join('questions', 'built_environment.question_id', '=', 'questions.id')
+        ->select('questions.name','questions.id','built_environment.answer')
+        ->get();
+
         
+        
+        $ind=true;
+
         if(\Auth::user()->rol === 'Investigador'){
             $users= \DB::table('solicitud')->select(
+                'id', 
                 'nombre', 
                 'apellidos',
                 'email',
@@ -34,9 +53,15 @@ class HomeController extends Controller
                 'institucion',
                 'motivo'
                 )->get();
-            return view('home', compact('users'));
+
+            
+            
+            // return view('home', compact('users','aspD','g2','ind'));
+            return view('home', compact('users','aspD','g2','alF','buE','ind'));
         }else{
-            return view('home');
+            // return view('home', compact('aspD','g2','ind'));
+            return view('home', compact('aspD','g2','alF','buE','ind'));
+            
         }
         
         

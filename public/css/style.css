@@ -1,6 +1,6 @@
-.body{
+/* .body{
   color: red;
-}
+} */
 .foot-p{
     /* border: #adadad 1px solid; */
     padding: 10px;
@@ -78,4 +78,157 @@
 }
 .item-sl:active{
   background-color: #1cc88a;
+}
+
+
+
+.flotante {
+  /* outline:none; */
+
+  display:flex;
+  position: absolute;
+  top:118px;
+  right: 24px;
+  border: 0;
+  height: 50px;
+  width: 50px;
+  /* border-top-left-radius: 50%; */
+  border-bottom-left-radius: 50%;
+  color:white;
+  background-color: #2f5ada;
+  z-index: 100;
+  align-items: flex-end;
+  font-size: 1.5rem;
+  padding-left: 10px;
+  transition: all .3s;
+  /* flex-direction: column; */
+  
+  
+}
+.flotante:enabled{
+  outline: none;
+}
+
+.flotante:hover {
+  background-color: #7796f1;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 60px;
+  
+}
+
+.rotate{
+  transition: all .3s;
+  /* border: solid red 1px; */
+}
+.rotate:hover{
+  transform: rotate(90deg);
+}
+
+.moveLeft{
+  right: 224px;
+}
+
+
+.menuMapa {
+  display: fixed;
+  position: absolute;
+  top:118px;
+  right: 24px;
+  border: 0;
+  height: 600px;
+  width: 0px;
+  /* border-top-left-radius: 50%; */
+  border-bottom-left-radius: 20px;
+  color:white;
+  background-color: #2f5ada;
+  z-index: 100;
+  /* align-items: flex-end; */
+  font-size: 1.5rem;
+  overflow:hidden;
+  transition: all .3s;
+
+}
+
+.txtM{
+  position: relative;
+  padding: 15px;
+}
+.title_M{
+  font-weight:bold
+}
+.subt_M{
+  padding-top: 10px;
+  font-size: 12px;
+  font-weight:bold
+}
+.contet_M{
+  padding: 10px;
+  font-size: 12px;
+  background-color: white;
+  color: black;
+  border-radius: 8px 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow-x:hidden; 
+  overflow-y:auto;
+  height: 150px;
+  /* line-height: 20px; */
+}
+
+.ali{
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+  
+
+}
+
+.herm{
+  position: relative;
+  /* padding-left: 10px; */
+  /* border: solid red 1px; */
+  /* color: #1cc88a; */
+  align-items: center;
+  display: flex;
+  padding-bottom: 5px;
+  
+}
+
+
+.textinput {
+  /* float:left; */
+  width: 100%;
+  min-height: 50px;
+  /* outline: none; */
+  /* resize: none; */
+  /* border: 1px solid #f0f0f0; */
+}
+
+.blue{
+  color:royalblue;
+}
+
+.btn-blue{
+  background-color:royalblue; 
+  color: White;
+}
+
+.btn-blue:hover{
+  background-color:rgb(45, 91, 230); 
+  color: White;
+}
+
+a:link{
+  text-decoration:none;
+}
+
+.opcion_gr{
+  position: relative;
+  display: none; 
+  margin-left: 10px;
+}
+
+.no_mar{
+  margin-bottom: 0;
 }

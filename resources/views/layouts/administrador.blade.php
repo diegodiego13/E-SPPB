@@ -1,23 +1,41 @@
+<!-- All content page -->
 @section('content')
+      <div id="changeContent">
 
-<div class="container-fluid">
-* Configuración de variables; dentro de está opción se despliegan las opciones de agregar
-variable, editar variable, eliminar variable, Cantidad de variables a graficar.
-<br>
-* Gestión de plataformas; al abrir esta lo único que habrá será un label donde estará la URL
-de la plataforma de recolección de datos, de tal forma que, si cambia en algún momento,
-solo sea cambiar la URL en dicho label y dar guardar y que se almacene en la base de datos
-del sistema.
-<br>
-* Configuración de gráficos; se deben listar los tipos de gráficos que en el sistema se
-permitirán visualizar y los que estén seleccionados son los que podrá ver los demás
-usuarios.
-<br>
-* Gestión de usuarios; agregar usuario, editar usuario, eliminar usuario, listar usuarios.
-</div>
+        @if (isset($ind) && $ind==true)
+            @include('index')
+        @else
+            @if (isset($agregar))
+                @include('agregar')
+            @else
+                @if (isset($editar))
+                    @include('editar')
+                @else
+                    @if (isset($eliminar))
+                        @include('eliminar')
+                    @else
+                        @if (isset($listar))
+                            @include('listar')
+                        @else
+                            @if (isset($solicitud))
+                                @include('solicitud')
+                            @else
+                                @if (isset($ver))
+                                    @include('ver')
+                                @endif
+                            @endif
+                        @endif
+                    @endif
+                @endif
+            @endif
+        @endif
+    <div>
 @endsection
+<!-- End content page -->
 
-<!-- Sidebar -->
+{{-- ----------------------------------------------------------------------- --}}
+
+<!-- Section Menu -->
 @section('mainMenu')
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -25,7 +43,7 @@ usuarios.
     <a class="sidebar-brand d-flex align-items-center" style="justify-content: flex-end;" href="#">
             {{-- justify-content-center --}}
         <div class="sidebar-brand-icon rotate-n-15" >
-            <i style="font-size: 15px;">{{ config('app.name') }}</i>
+            <i style="font-size: 15px;">E-SSPB+</i>
             {{-- class="fas fa-laugh-wink" --}}
         </div   >
         
@@ -52,40 +70,48 @@ usuarios.
         {{Auth::user()->rol}}
     </div>
 
+        <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('map') }}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Configuración de variables</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('hisC') }}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Gestión de plataformas</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('hisC') }}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Agregar Centro medico</span></a>
+    </li>
+
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Components</span>
+            <span> Gestión de usuarios</span>
         </a>
         <div id="collapseTwo" class="collapse" data-parent="#accordionSidebar">
                 {{-- aria-labelledby="headingTwo"  --}}
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Componentes:</h6>
-                <a class="collapse-item"  href="#">Buttons</a>
-                <a class="collapse-item"  href="#">Cards</a>
+                <a class="collapse-item"  href="{{ route('usuarioAgregar') }}">Agregar usuario</a>
+                <a class="collapse-item"  href="{{ route('usuarioEditar') }}">Editar usuario</a>
+                <a class="collapse-item"  href="{{ route('usuarioEliminar') }}">Eliminar usuario</a>
+                <a class="collapse-item"  href="{{ route('usuarioListar') }}">Listar usuario</a>
+                <a class="collapse-item"  href="{{ route('usuarioSolicitud') }}">Solicitudes</a>
             </div>
         </div>
     </li>
 
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" 
-            data-parent="#accordionSidebar">
-            {{-- aria-labelledby="headingUtilities" --}}
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Componentes:</h6>
-                <a class="collapse-item" href="#">Colors</a>
-                <a class="collapse-item" href="#">Borders</a>
-            </div>
-        </div>
-    </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
@@ -99,4 +125,4 @@ usuarios.
 
 </ul>
 @endsection
-<!-- End of Sidebar -->
+<!-- End of Menu -->

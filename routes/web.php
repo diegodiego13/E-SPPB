@@ -34,6 +34,32 @@ Route::get('logout1', 'Auth\LoginController@logout')->name('logout1');
 Route::post('register', 'RegistroController@store');
 Route::get('register', 'RegistroController@store')->name('register');
 
+
+
+
+Route::get('consulta/personalizada', 'Consultas@ConsultaP')->name('conP');
+Route::get('consulta/limitada', 'Consultas@ConsultaL')->name('conL');
+Route::get('consulta', 'Consultas@store')->name('consultaPer');
+
+Route::get('HistoriaClinica', 'Paciente@initial')->name('hisC');
+Route::get('HistoriaClinica/consultar', 'Paciente@store')->name('cedula');
+
+Route::get('usuario/agregar', 'Usuario@agregar')->name('usuarioAgregar');
+Route::get('usuario/editar', 'Usuario@editar')->name('usuarioEditar');
+Route::get('usuario/eliminar', 'Usuario@eliminar')->name('usuarioEliminar');
+Route::get('usuario/listar', 'Usuario@listar')->name('usuarioListar');
+Route::get('usuario/solicitud', 'Usuario@solicitud')->name('usuarioSolicitud');
+
+Route::post('usuario/add', 'Usuario@add')->name('formAdd');
+Route::get('usuario/solicitud/{id}', 'Usuario@ver')->name('ver');
+Route::get('usuario/solicitud/aceptar/{id}', 'Usuario@aceptar')->name('aceptar');
+Route::get('usuario/solicitud/rechazar/{id}', 'Usuario@rechazar')->name('rechazar');
+
+Route::get('map/grafico', 'Grafico@initial')->name('grafico');
+Route::get('map/grafico', 'GraficoTwo@initial')->name('graficoTwo');
+Route::get('map', 'Mapa@initial')->name('map');
+
+
 // Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 // Route::post('register', 'Auth\RegisterController@register');
 
@@ -43,7 +69,7 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/aspDemo', 'DemograficoController@index')->name('aspDemo');
 

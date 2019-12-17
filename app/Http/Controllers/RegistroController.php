@@ -58,7 +58,8 @@ class RegistroController extends Controller
                 'motivo' => $request->input('motivo')
             ]
         );
-        return redirect('')->with('registrado',true);
+
+
 
     }
 
@@ -81,7 +82,15 @@ class RegistroController extends Controller
      */
     public function edit($id)
     {
-        //
+
+
+
+        // $results = \DB::select('select * from solicitud where id = ?', [$id]);
+        // $usuario= \DB::table('solicitud')->where('id', '=', $id)->get();
+        // $edit=true;
+        // echo $results;
+        // return view('home')->with(['edit'=> true, 'usuario'=>$results]);
+        // return view('home', compact('edit','usuario'));
     }
 
     /**
@@ -91,9 +100,31 @@ class RegistroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        // $affected = \DB::table('solicitud')
+        // ->where('id', $id)
+        // ->update(['respuesta' => $request->select('respuesta')]);
+
+        // dump($request);
+        // if (is_array($request) || is_object($request)){
+
+        //     foreach ($request->get('respuesta') as $key => $value) {
+        //         echo $key;
+        //     }
+        // }
+        
+    }
+
+    public function cambio(Request $request){
+        // $checkbox = \Input::get('respuesta');
+        // var_dump($checkbox);
+
+        // foreach ($request->get('respuesta')  as $key => $value) {
+        //     echo $request->input('respuesta')[$key];
+        // }
+  
+        
     }
 
     /**
